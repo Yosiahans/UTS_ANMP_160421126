@@ -17,6 +17,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        navController = (supportFragmentManager.findFragmentById(R.id.FragmentHost)as NavHostFragment).navController
+        NavigationUI.setupActionBarWithNavController(this,navController,binding.drawerLayout)
+        NavigationUI.setupWithNavController(binding.botNav, navController)
         binding.botNav.setupWithNavController(navController)
 
         navController = (supportFragmentManager.findFragmentById(R.id.FragmentHost) as NavHostFragment).navController

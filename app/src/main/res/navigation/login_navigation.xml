@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login_navigation"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/ItemHome">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -12,13 +12,13 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_mainFragment"
-            app:destination="@id/itemHome" />
+            app:destination="@id/ItemHome" />
         <action
             android:id="@+id/action_loginFragment_to_regisFragment"
             app:destination="@id/regisFragment" />
     </fragment>
     <fragment
-        android:id="@+id/itemHome"
+        android:id="@+id/ItemHome"
         android:name="com.example.uts_anmp_160421126.View.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
@@ -27,7 +27,7 @@
             app:destination="@id/newsDetailFragment" />
         <action
             android:id="@+id/action_itemHome_to_profileFragment"
-            app:destination="@id/itemProfile" />
+            app:destination="@id/ItemProfile" />
     </fragment>
     <fragment
         android:id="@+id/newsDetailFragment"
@@ -44,12 +44,12 @@
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/itemProfile"
+        android:id="@+id/ItemProfile"
         android:name="com.example.uts_anmp_160421126.View.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
             android:id="@+id/action_profileFragment_to_itemHome"
-            app:destination="@id/itemHome" />
+            app:destination="@id/ItemHome" />
     </fragment>
 </navigation>

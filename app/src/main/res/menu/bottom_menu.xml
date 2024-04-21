@@ -4,6 +4,7 @@
 
     <item
         android:id="@+id/ItemHome"
+        android:icon="@drawable/baseline_home_24"
         android:title="Home"
         app:showAsAction="always" />
     <item
