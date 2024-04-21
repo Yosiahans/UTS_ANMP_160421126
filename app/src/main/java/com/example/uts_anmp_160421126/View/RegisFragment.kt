@@ -1,6 +1,7 @@
 package com.example.uts_anmp_160421126.View
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -36,23 +37,29 @@ class RegisFragment : Fragment() {
             val email = binding.txtEmailRegis.text.toString()
             val password = binding.txtPasswordRegis.text.toString()
             if (username != "" && password != "" && email!=""){
-                val url = "http://10.0.2.2/anmp/add_account.php"
+                val url = "http://10.0.2.2/anmp/register.php"
                 val stringRequest = object : StringRequest(
                     Request.Method.POST, url,
                     Response.Listener { response ->
                         if (response == "{\"result\":\"success\"}") {
                             Toast.makeText(context, "Account Created ", Toast.LENGTH_SHORT).show()
 
-                            val action = LoginFragmentDirections.actionLoginFragmentToMainFragment()
+                            val action = RegisFragmentDirections.RegisToLogin()
                             Navigation.findNavController(it).navigate(action)
                         } else {
-                            Toast.makeText(context, "Please Try Again", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, "Please Try Again" + response, Toast.LENGTH_SHORT).show()
                         }
                     },
                     Response.ErrorListener {
                         Toast.makeText(context, "Error: " + it.message, Toast.LENGTH_SHORT).show()
                     }) {
-
+                    override fun getParams(): Map<String, String> {
+                        val params = HashMap<String, String>()
+                        params["username"] = username
+                        params["password"] = password
+                        params["email"] = email
+                        return params
+                    }
                 }
                 Volley.newRequestQueue(context).add(stringRequest)
             }

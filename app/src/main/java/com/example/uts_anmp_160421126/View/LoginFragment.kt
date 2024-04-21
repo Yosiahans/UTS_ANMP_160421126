@@ -52,6 +52,13 @@ class LoginFragment : Fragment() {
                     Response.ErrorListener {
                         Toast.makeText(context, "Error: " + it.message, Toast.LENGTH_SHORT).show()
                     }) {
+                    override fun getParams(): Map<String, String> {
+                        val params = HashMap<String, String>()
+                        params["username"] = usn
+                        params["password"] = pwd
+                        return params
+                    }
+
 
                 }
                 Volley.newRequestQueue(context).add(stringRequest)

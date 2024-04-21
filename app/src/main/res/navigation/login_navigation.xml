@@ -12,13 +12,13 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/itemHome" />
         <action
             android:id="@+id/action_loginFragment_to_regisFragment"
             app:destination="@id/regisFragment" />
     </fragment>
     <fragment
-        android:id="@+id/mainFragment"
+        android:id="@+id/itemHome"
         android:name="com.example.uts_anmp_160421126.View.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >

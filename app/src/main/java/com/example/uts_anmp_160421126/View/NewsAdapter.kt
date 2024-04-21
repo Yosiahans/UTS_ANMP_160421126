@@ -41,7 +41,7 @@ class NewsAdapter(val newsList:ArrayList<News>)
             })
 //        holder.binding.imageView.setImageResource()
         holder.binding.btnDetail.setOnClickListener{
-            val action = LoginFragmentDirections.actionLoginFragmentToMainFragment()
+            val action = MainFragmentDirections.actionMainFragmentToNewsDetailFragment()
             Navigation.findNavController(it).navigate(action)
         }
 

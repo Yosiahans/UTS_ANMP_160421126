@@ -8,9 +8,11 @@ import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
 import com.example.uts_anmp_160421126.Model.News
 import com.example.uts_anmp_160421126.R
+import com.example.uts_anmp_160421126.databinding.FragmentNewsDetailBinding
 
 
 class NewsDetailFragment : Fragment() {
+    private lateinit var binding: FragmentNewsDetailBinding
     val newsLD = MutableLiveData<News>()
 //    private lateinit var bindin
 
@@ -23,6 +25,9 @@ class NewsDetailFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
+//            fetch()
+
+
 
         }
     }
