@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_mainFragment_to_newsDetailFragment"
             app:destination="@id/newsDetailFragment" />
+        <action
+            android:id="@+id/action_itemHome_to_profileFragment"
+            app:destination="@id/itemProfile" />
     </fragment>
     <fragment
         android:id="@+id/newsDetailFragment"
@@ -39,5 +42,14 @@
         <action
             android:id="@+id/RegisToLogin"
             app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemProfile"
+        android:name="com.example.uts_anmp_160421126.View.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_itemHome"
+            app:destination="@id/itemHome" />
     </fragment>
 </navigation>

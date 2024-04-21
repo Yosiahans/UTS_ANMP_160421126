@@ -6,6 +6,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
 import com.example.uts_anmp_160421126.R
 import com.example.uts_anmp_160421126.databinding.ActivityMainBinding
 
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.botNav.setupWithNavController(navController)
 
         navController = (supportFragmentManager.findFragmentById(R.id.FragmentHost) as NavHostFragment).navController
         NavigationUI.setupActionBarWithNavController(this,navController)

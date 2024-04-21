@@ -26,6 +26,7 @@ class NewsAdapter(val newsList:ArrayList<News>)
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         holder.binding.txtJudul.text = newsList[position].judul
         holder.binding.txtAuthor.text = newsList[position].author
+
         val picasso = Picasso.Builder(holder.itemView.context)
         picasso.listener { picasso, uri, exception ->
             exception.printStackTrace()
